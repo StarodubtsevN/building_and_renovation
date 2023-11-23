@@ -6,10 +6,10 @@ global $name;
 global $sure_name; ?>
 <title>Личный кабинет</title>
 <body>
-<div class="option-window">
-    <div class="photo">
-<!--        <img src="../../image/Male_User-1024.webp" alt="Ваше фото" height="162px" width="162px">
--->    </div>
+    <div class="option-window">
+<!--    <div class="photo">
+       <img src="../../image/Male_User-1024.webp" alt="Ваше фото" height="162px" width="162px">
+    </div>-->
     <div class="account">
         <a href="<?= url('account/acc_form') ?>" class="account-text">Личный кабинет</a>
     </div>
@@ -17,7 +17,7 @@ global $sure_name; ?>
         <a href="<?= url('') ?>" class="account-text">Подписка</a>
     </div>
     <div class="account">
-        <a href="<?= url('') ?>" class="account-text" type="button">Страница счета</a>
+        <a href="<?= url('calculator/calc_form') ?>" class="account-text" type="button">Страница счета</a>
     </div>
     <div class="account">
         <a href="<?= url('') ?>" class="account-text">Настройки </a>
