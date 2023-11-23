@@ -13,9 +13,6 @@ global $sure_name; ?>
     <div class="account">
         <a href="<?= url('account/acc_form') ?>" class="account-text">Личный кабинет</a>
     </div>
-    <div class="account" type="reset">
-        <a href="<?= url('') ?>" class="account-text">Подписка</a>
-    </div>
     <div class="account">
         <a href="<?= url('calculator/calc_form') ?>" class="account-text" type="button">Страница счета</a>
     </div>

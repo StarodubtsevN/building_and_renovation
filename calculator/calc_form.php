@@ -14,9 +14,6 @@ require_once ("../_partials/_helper.php");
         <a href="<?= url('account/acc_form') ?>" class="account-text">Личный кабинет</a>
     </div>
     <div class="account">
-        <a href="<?= url('') ?>" class="account-text">Подписка</a>
-    </div>
-    <div class="account">
         <a href="<?= url('calculator/calc_form') ?>" class="account-text" type="button">Страница счета</a>
     </div>
     <div class="account">
