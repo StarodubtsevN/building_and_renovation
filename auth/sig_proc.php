@@ -13,6 +13,7 @@ if (isset($_POST['fam']) || isset($_POST['name']) || isset($_POST['em']) || isse
     $name=$_POST['name'];
     $em=$_POST['em'];
     $pass=$_POST['pass'];
+    $pass = password_hash($pass, PASSWORD_DEFAULT);
 // проверка на заполнение еще нужно доделать, чтобы выводилось сообщение в то поле, которое не заполнено
     if (empty($_POST['fam']) || empty($_POST['name']) || empty($_POST['em']) || empty($_POST['pass'])){
         echo ("Какое-то поле не заполнено");
@@ -31,12 +32,12 @@ if (isset($_POST['fam']) || isset($_POST['name']) || isset($_POST['em']) || isse
     $_em= $db->real_escape_string($em);
     $_pass= $db->real_escape_string($pass);
 
-
+// @todo сделать так, чтобы пароль хешировался в базе данных
     $que= "INSERT INTO registration (surename, name, email, pass) VALUES ('$_fam','$_name','$_em','$_pass')";
     $res = $db->query($que);
-
-    if ($res) echo "после этого должен быть переход на главную страницу";/*header('Location: ../account/acc_form.php')*/
-
+// @todo сделать проверку на то есть ли пользователь, если же есть, то сделать переход на страницу авторизации
+    if ($res) echo "после этого должен быть переход на главную страницу";header('Location: ../account/acc_form.php');
+// @todo сделать отправку сообщения и сделать подтверждение кода,
 /*    mail(".$sms_email.", "Заявка с сайта", "ФИО:".$fam.". E-mail: ".$em." \r\n");
       echo "Сообщение успешно отправлено";
     } else {

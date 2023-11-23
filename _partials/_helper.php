@@ -2,7 +2,7 @@
 
 function url($path)
 {
-    return '/pnt/code/' . $path . '.php';
+    return '/bar/' . $path . '.php';
 }
 
 function ensureLogIn()

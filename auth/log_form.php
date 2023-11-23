@@ -21,8 +21,7 @@ session_start();
             </p>
             <ul class="list">
                 <li class="list-blank">
-                    <input class="text-block" name="login" type="email" placeholder="Email">
-
+                    <input class="text-block" name="em" type="email" placeholder="Email">
                 </li>
                 <li class="list-blank">
                     <input class="text-block" name="pass" type="password" placeholder="Пароль">
