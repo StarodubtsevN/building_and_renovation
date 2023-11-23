@@ -3,11 +3,8 @@ require ("../_partials/_header.php");
 require_once ("../_partials/_helper.php");
 require ('acc_proc.php');
 global $name;
-global $sure_name;
-?>
-
+global $sure_name; ?>
 <title>Личный кабинет</title>
-
 <body>
 <div class="option-window">
     <div class="photo">
@@ -26,7 +23,7 @@ global $sure_name;
         <a href="<?= url('') ?>" class="account-text">Настройки </a>
     </div>
     <div class="account">
-        <a href="<?= url('auth/sig_form') ?>" class="account-text">Выход</a>
+        <a href="<?= url('auth/sig_form') ?>" class="account-text">Выход</a> <!--сделать так, чтобы стералась сессия при выходе-->
     </div>
 </div>
 
