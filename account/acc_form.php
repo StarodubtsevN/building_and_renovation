@@ -3,7 +3,9 @@ require ("../_partials/_header.php");
 require_once ("../_partials/_helper.php");
 require ('acc_proc.php');
 global $name;
-global $sure_name; ?>
+global $sure_name;
+
+?>
 <title>Личный кабинет</title>
 <body>
     <div class="option-window">

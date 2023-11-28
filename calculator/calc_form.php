@@ -1,6 +1,7 @@
 <?php
 require ("../_partials/_header.php");
 require_once ("../_partials/_helper.php");
+global $selectedWindow;
 ?>
 
 <title>Стараница счета</title>
@@ -22,16 +23,14 @@ require_once ("../_partials/_helper.php");
     <div class="account">
         <a href="<?= url('auth/sig_form') ?>" class="account-text">Выход</a> <!--сделать так, чтобы стералась сессия при выходе-->
     </div>
-
     <!-- Форма выбора окна -->
     <form method="post">
         <!--решить проблему с тем, что при нажатии на кнопку не сохраняется выбор пользователя(выбор-тип постройки)-->
-        <label for="window">Выберите тип постройки:</label>
+        <label>Выберите тип постройки:</label>
         <select name="window" id="window">
             <option value="window1">Фундамент</option>
             <option value="window2">Стены</option>
             <option value="window3">Придумать еще, что-то</option>
-            <!-- Добавить что-то еще при необоходимости -->
         </select>
         <input type="submit" name="submit" value="Показать окно">
     </form>
@@ -40,7 +39,7 @@ require_once ("../_partials/_helper.php");
         <!-- Отображение содержимого выбранного окна -->
         <?php
         // Проверяем, была ли отправлена форма
-        if (isset($_POST['submit'])) {
+        if (isset($_POST['window'])) {
             // Получаем выбранное значение из меню
             $selectedWindow = $_POST['window'];
             // В зависимости от выбора пользователя, подключаем нужное содержимое
@@ -56,6 +55,6 @@ require_once ("../_partials/_helper.php");
     </div>
 </div>
 </body>
-</html>
+
 
 
