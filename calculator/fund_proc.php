@@ -4,6 +4,13 @@ require_once("../_partials/_helper.php");
 global $selectedWindow;
 ?>
 <body>
+<header> <?php include("../_partials/menus/global_menu.php");?></header>
+<hr>
+<!-- отображение меню перехода по окнам -->
+<footer>
+    <?php include("../_partials/menus/menu_type_build.php");?></footer>
+<hr>
+<div>
     <div>
         <form method="post">
             <!--решить проблему с тем, что при нажатии на кнопку не сохраняется выбор пользователя(выбор-тип постройки)-->
@@ -49,3 +56,4 @@ global $selectedWindow;
         </div>
     </div>
 </body>
+</html>
