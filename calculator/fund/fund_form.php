@@ -1,14 +1,15 @@
 <?php
-require("../_partials/_header.php");
-require_once("../_partials/_helper.php");
+require("../../_partials/_header.php");
+require_once("../../_partials/_helper.php");
 global $selectedWindow;
 ?>
+<title>Стараница счета фундамента</title>
 <body>
-<header> <?php include("../_partials/menus/global_menu.php");?></header>
+<header> <?php include("../../_partials/menus/global_menu.php");?></header>
 <hr>
 <!-- отображение меню перехода по окнам -->
 <footer>
-    <?php include("../_partials/menus/menu_type_build.php");?></footer>
+    <?php include("../../_partials/menus/menu_type_build.php");?></footer>
 <hr>
 <div>
     <div>
@@ -32,14 +33,32 @@ global $selectedWindow;
                 switch ($selectedW)
                 {
                     case 'w_1':
-                        echo 'проверка';
+                        echo '<div class="fund_calc">
+                            <form action="fund_proc.php">
+                              <div> 
+                                <input type="text" class="input-box" placeholder="Ширина"> </div>
+                              <div> 
+                                <input type="text" class="input-box" placeholder="Высота"> </div>
+                              <div> 
+                                <input type="text" class="input-box" placeholder="Общая длина"> </div>   
+                                  <input type="submit" name="sub" value="Рассчитать">                
+                            </form>
+                             </div> 
+                                ';
+                        break;
+                    case 'w_2':
+                        echo '2проверка';
+                        break;
+                    case 'w_3':
+                        echo '3проверка';
+                        break;
+                    case 'w_4':
+                        echo '4проверка';
                         break;
                     default:
                         echo ':(';
                         break;
                 }
-
-
             }
 /*            if (isset($_POST['window_2'])) {
                 $selectedWindow = $_POST['window_2'];
