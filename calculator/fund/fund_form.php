@@ -1,7 +1,7 @@
 <?php
 require("../../_partials/_header.php");
 require_once("../../_partials/_helper.php");
-global $selectedWindow;
+global $res;
 ?>
 <title>Стараница счета фундамента</title>
 <body>
@@ -33,18 +33,41 @@ global $selectedWindow;
                 switch ($selectedW)
                 {
                     case 'w_1':
-                        echo '<div class="fund_calc">
-                            <form action="fund_proc.php">
-                              <div> 
-                                <input type="text" class="input-box" name="" placeholder="Высота"> </div>
-                              <div> 
-                                <input type="text" class="input-box" placeholder="Ширина"> </div>
-                              <div> 
-                                <input type="text" class="input-box" placeholder="Общая длина"> </div>   
-                                  <input type="submit" name="sub" value="Рассчитать">                
-                            </form>
-                             </div> 
-                                ';
+                        echo '
+    <form action="fund_proc.php" method="POST">
+        <label for="height">Высота:</label>
+        <input type="text" name="height" id="height"><br><br>
+
+        <label for="width">Ширина:</label>
+        <input type="text" name="width" id="width"><br><br>
+
+        <label for="total_length">Общая длина постройки:</label>
+        <input type="text" name="total_length" id="total_length"><br><br>
+
+        <button class="bottom-reg" type="submit">Рассчитать</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        // При отправке формы отменяем стандартное поведение и отправляем данные через AJAX
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const form = new FormData(this);
+            fetch("fund_proc.php", {
+                method: "POST",
+                body: form
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("result").innerHTML = data;
+            })
+            .catch(error => {
+                console.error("Ошибка:", error);
+            });
+        });
+    </script>
+</body>
+</html> 
+';
                         break;
                     case 'w_2':
                         echo '2проверка';

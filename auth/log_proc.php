@@ -15,7 +15,6 @@ if (isset($_POST['em']) || isset($_POST['pass'])) {
     $_pas= $DB->real_escape_string($pas);
     if (empty($_POST['em']) || empty($_POST['pass'])){
         echo ("Какое-то поле не заполнено");
-
         exit;
     }
     $query = $DB->prepare('SELECT id, email, pass FROM registration  
