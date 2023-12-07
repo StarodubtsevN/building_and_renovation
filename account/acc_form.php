@@ -7,7 +7,7 @@ global $sure_name;
 ?>
 <title>Личный кабинет</title>
 <div>
-    <header> <?php include("../_partials/menus/global_menu.php");?></header>
+    <header> <?php include("../_partials/global_menu.php");?></header>
 
     <div class="window-account">
         <p class="home-name"><?php echo "Имя пользователя: ".$name ?></p>

@@ -8,11 +8,11 @@ global $selectedWindow;
 <body>
 <!-- отображение меню перехода по страницам сайта-->
 <div>
-    <header> <?php include("../_partials/menus/global_menu.php");?></header>
+    <header> <?php include_once("../_partials/global_menu.php");?></header>
     <hr>
     <!-- отображение меню перехода по окнам -->
     <footer>
-    <?php include("../_partials/menus/menu_type_build.php");?></footer>
+    <?php include_once("../_partials/menu_type_build.php");?></footer>
     <hr>
 </div>
 </body>

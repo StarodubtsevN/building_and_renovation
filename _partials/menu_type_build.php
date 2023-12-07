@@ -1,6 +1,6 @@
 <?php
-require("../../_partials/_header.php");
-require_once("../../_partials/_helper.php");
+require("_header.php");
+require_once("_helper.php");
 ?>
 <!--меню перехода по типам постройки-->
 <body>

@@ -5,11 +5,11 @@ global $selectedWindow;
 ?>
 <title>Стараница счета фундамента</title>
 <body>
-<header> <?php include("../../_partials/menus/global_menu.php");?></header>
+<header> <?php include("../../_partials/global_menu.php");?></header>
 <hr>
 <!-- отображение меню перехода по окнам -->
 <footer>
-    <?php include("../../_partials/menus/menu_type_build.php");?></footer>
+    <?php include("../../_partials/menu_type_build.php");?></footer>
 <hr>
 <div>
     <div>
@@ -36,9 +36,9 @@ global $selectedWindow;
                         echo '<div class="fund_calc">
                             <form action="fund_proc.php">
                               <div> 
-                                <input type="text" class="input-box" placeholder="Ширина"> </div>
+                                <input type="text" class="input-box" name="" placeholder="Высота"> </div>
                               <div> 
-                                <input type="text" class="input-box" placeholder="Высота"> </div>
+                                <input type="text" class="input-box" placeholder="Ширина"> </div>
                               <div> 
                                 <input type="text" class="input-box" placeholder="Общая длина"> </div>   
                                   <input type="submit" name="sub" value="Рассчитать">                
