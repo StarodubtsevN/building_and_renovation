@@ -1,7 +1,6 @@
 <?php
 require("../../_partials/_header.php");
 require_once("../../_partials/_helper.php");
-global $res;
 ?>
 <title>Стараница счета фундамента</title>
 <body>
@@ -34,7 +33,7 @@ global $res;
                 {
                     case 'w_1':
                         echo '
-    <form action="fund_proc.php" method="POST">
+    <form name="form1"  action="lent_proc.php" method="POST">
         <label for="height">Высота:</label>
         <input type="text" name="height" id="height"><br><br>
 
@@ -44,15 +43,15 @@ global $res;
         <label for="total_length">Общая длина постройки:</label>
         <input type="text" name="total_length" id="total_length"><br><br>
 
-        <button class="bottom-reg" type="submit">Рассчитать</button>
+        <button class="bottom-reg" type="submit" name="ras">Рассчитать</button>
     </form>
     <div id="result"></div>
     <script>
         // При отправке формы отменяем стандартное поведение и отправляем данные через AJAX
-        document.querySelector("form").addEventListener("submit", function(event) {
+        document.querySelector("form1").addEventListener("ras", function(event) {
             event.preventDefault();
             const form = new FormData(this);
-            fetch("fund_proc.php", {
+            fetch("lent_proc.php", {
                 method: "POST",
                 body: form
             })
@@ -70,7 +69,40 @@ global $res;
 ';
                         break;
                     case 'w_2':
-                        echo '2проверка';
+                        echo '    
+    <form name="form2" action="stolb_proc.php" method="POST">
+        <label for="height_s">Высота столба:</label>
+        <input type="text" name="height_s" id="height_s"><br><br>
+
+        <label for="diameter">Диаметр столба:</label>
+        <input type="text" name="diameter" id="diameter"><br><br>
+
+        <label for="quantity ">Количество стоблов:</label>
+        <input type="text" name="quantity " id="quantity "><br><br>
+
+        <button class="bottom-reg" type="submit" name="res">Рассчитать</button>
+    </form>
+    <div id="result_s"></div>
+    <script>
+        // При отправке формы отменяем стандартное поведение и отправляем данные через AJAX
+        document.querySelector("form2").addEventListener("res", function(event) {
+            event.preventDefault();
+            const form_s = new FormData(this);
+            fetch("stolb_proc.php", {
+                method: "POST",
+                body: form
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("result_s").innerHTML = data;
+            })
+            .catch(error => {
+                console.error("Ошибка:", error);
+            });
+        });
+    </script>
+</body>
+</html> ';
                         break;
                     case 'w_3':
                         echo '3проверка';
@@ -83,18 +115,7 @@ global $res;
                         break;
                 }
             }
-/*            if (isset($_POST['window_2'])) {
-                $selectedWindow = $_POST['window_2'];
-                if ($selectedWindow === 'w_1') {
-                    echo 'здесь должен быть калькулятор по первому типу фундамента';
-                } elseif ($selectedWindow === 'w_2'){
-                    echo 'здесь должен быть калькулятор по второму типу фундамента';
-                } elseif ($selectedWindow === 'w_3'){
-                    echo 'здесь должен быть калькулятор по третьему типу фундамента';
-                } elseif ($selectedWindow === 'w_4'){
-                    echo 'здесь должен быть калькулятор по четвертому типу фундамента';
-                }
-            }*/ ?>
+ ?>
         </div>
     </div>
 </body>
