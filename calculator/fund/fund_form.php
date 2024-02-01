@@ -1,6 +1,6 @@
 <?php
 require("../../_partials/_header.php");
-require_once("../../_partials/_helper.php");
+require_once("../sudo /etc/init.d/apache2 stop../_partials/_helper.php");
 ?>
 <title>Стараница счета фундамента</title>
 <body>
